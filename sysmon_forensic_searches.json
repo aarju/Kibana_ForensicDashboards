@@ -1,0 +1,182 @@
+[
+  {
+    "_id": "5a792770-4343-11e9-a4c5-1717ba697d0d",
+    "_type": "search",
+    "_source": {
+      "title": "Sysmon-EventId-3",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "beat_name",
+        "event_id",
+        "process_guid",
+        "process_path",
+        "src_ip_addr",
+        "src_port",
+        "dst_ip_addr",
+        "dst_port",
+        "meta_dst_ip_geo.city_name",
+        "ipv6_src_addr",
+        "ipv6_dst_addr"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logs-endpoint-*\",\"highlightAll\":true,\"version\":true,\"query\":{\"query\":\"event_id:3 NOT dst_ip_addr: \\\"127.0.0.1\\\" NOT scr_ip_addr:\\\"239.255.255.250\\\"\",\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "689ef060-4342-11e9-a4c5-1717ba697d0d",
+    "_type": "search",
+    "_source": {
+      "title": "Sysmon-EventId-1",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "beat_name",
+        "event_id",
+        "process_guid",
+        "process_parent_command_line",
+        "process_command_line",
+        "file_description",
+        "file_product",
+        "file_company"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logs-endpoint-winevent-sysmon-*\",\"highlightAll\":true,\"version\":true,\"query\":{\"query\":\"event_id:1\",\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "1821dba0-4344-11e9-a4c5-1717ba697d0d",
+    "_type": "search",
+    "_source": {
+      "title": "Sysmon-EventId-11-FileCreate",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "beat_name",
+        "event_id",
+        "process_guid",
+        "process_path",
+        "file_name"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logs-endpoint-*\",\"highlightAll\":true,\"version\":true,\"query\":{\"query\":\"event_id:11\",\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "db661470-4347-11e9-a4c5-1717ba697d0d",
+    "_type": "search",
+    "_source": {
+      "title": "Sysmon-EventId-13-Registry",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "beat_name",
+        "process_path",
+        "event_id",
+        "process_guid",
+        "event_type",
+        "registry_key_path",
+        "registry_key_value"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logs-endpoint-*\",\"highlightAll\":true,\"version\":true,\"query\":{\"language\":\"lucene\",\"query\":\"event_id:12 OR event_id:13 OR event_id:14\"},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "1a68e8a0-4348-11e9-a4c5-1717ba697d0d",
+    "_type": "search",
+    "_source": {
+      "title": "Sysmon-EventId-15-Downloads",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "beat_name",
+        "process_path",
+        "event_id",
+        "process_guid",
+        "file_name"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logs-endpoint-*\",\"highlightAll\":true,\"version\":true,\"query\":{\"query\":\"source_name: \\\"Microsoft-Windows-Sysmon\\\" AND event_id:15\",\"language\":\"lucene\"},\"filter\":[{\"meta\":{\"negate\":false,\"index\":\"logs-endpoint-*\",\"type\":\"phrase\",\"key\":\"source_name\",\"value\":\"Microsoft-Windows-Sysmon\",\"params\":{\"query\":\"Microsoft-Windows-Sysmon\",\"type\":\"phrase\"},\"disabled\":false,\"alias\":null},\"query\":{\"match\":{\"source_name\":{\"query\":\"Microsoft-Windows-Sysmon\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}]}"
+      }
+    }
+  },
+  {
+    "_id": "4bb63750-4348-11e9-a4c5-1717ba697d0d",
+    "_type": "search",
+    "_source": {
+      "title": "Sysmon-EventId-WMI",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "beat_name",
+        "event_id",
+        "process_path",
+        "pipe_name",
+        "process_guid"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logs-endpoint-*\",\"highlightAll\":true,\"version\":true,\"query\":{\"query\":\"source_name: \\\"Microsoft-Windows-Sysmon\\\" AND (event_id:19 OR event_id:20 OR event_id:21)\",\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "ffb5aa00-4349-11e9-a4c5-1717ba697d0d",
+    "_type": "search",
+    "_source": {
+      "title": "windows-login-events",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "beat_name",
+        "event_id",
+        "keywords",
+        "user_name",
+        "logon_type",
+        "user_reporter_domain"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logs-endpoint-*\",\"highlightAll\":true,\"version\":true,\"query\":{\"query\":\"source_name: \\\"Microsoft-Windows-Security-Auditing\\\" event_id:4624 OR event_id:4625 OR event_id:4634\",\"language\":\"lucene\"},\"filter\":[{\"meta\":{\"negate\":false,\"index\":\"logs-endpoint-*\",\"type\":\"phrase\",\"key\":\"source_name\",\"value\":\"Microsoft-Windows-Security-Auditing\",\"params\":{\"query\":\"Microsoft-Windows-Security-Auditing\",\"type\":\"phrase\"},\"disabled\":false,\"alias\":null},\"query\":{\"match\":{\"source_name\":{\"query\":\"Microsoft-Windows-Security-Auditing\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}]}"
+      }
+    }
+  }
+]
