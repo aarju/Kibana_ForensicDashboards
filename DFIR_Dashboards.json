@@ -135,39 +135,6 @@
     }
   },
   {
-    "_id": "5a792770-4343-11e9-a4c5-1717ba697d0d",
-    "_type": "search",
-    "_source": {
-      "title": "Sysmon-Network Connections - EventId 3",
-      "description": "",
-      "hits": 0,
-      "columns": [
-        "beat_name",
-        "event_id",
-        "process_guid",
-        "process_path",
-        "src_ip_addr",
-        "src_port",
-        "dst_ip_addr",
-        "dst_port",
-        "meta_dst_ip_geo.city_name",
-        "ipv6_src_addr",
-        "ipv6_dst_addr"
-      ],
-      "sort": [
-        "@timestamp",
-        "desc"
-      ],
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"logs-endpoint-*\",\"highlightAll\":true,\"version\":true,\"query\":{\"query\":\"event_id:3 NOT dst_ip_addr: \\\"127.0.0.1\\\" NOT scr_ip_addr:\\\"239.255.255.250\\\"\",\"language\":\"lucene\"},\"filter\":[]}"
-      }
-    },
-    "_meta": {
-      "savedObjectVersion": 2
-    }
-  },
-  {
     "_id": "1821dba0-4344-11e9-a4c5-1717ba697d0d",
     "_type": "search",
     "_source": {
@@ -477,7 +444,7 @@
     "_id": "41449550-48f2-11e9-b62f-8f6921045c4c",
     "_type": "dashboard",
     "_source": {
-      "title": "Process Investigation Dashboard",
+      "title": "Sysmon-ProcessInvestigation",
       "hits": 0,
       "description": "Dashboard for investigating individual processes",
       "panelsJSON": "[{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":35,\"w\":48,\"h\":19,\"i\":\"1\"},\"id\":\"5a792770-4343-11e9-a4c5-1717ba697d0d\",\"panelIndex\":\"1\",\"type\":\"search\",\"version\":\"6.6.1\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":71,\"w\":48,\"h\":20,\"i\":\"2\"},\"id\":\"db661470-4347-11e9-a4c5-1717ba697d0d\",\"panelIndex\":\"2\",\"type\":\"search\",\"version\":\"6.6.1\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":91,\"w\":48,\"h\":19,\"i\":\"3\"},\"id\":\"1821dba0-4344-11e9-a4c5-1717ba697d0d\",\"panelIndex\":\"3\",\"type\":\"search\",\"version\":\"6.6.1\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":54,\"w\":48,\"h\":17,\"i\":\"4\"},\"id\":\"1a68e8a0-4348-11e9-a4c5-1717ba697d0d\",\"panelIndex\":\"4\",\"type\":\"search\",\"version\":\"6.6.1\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":110,\"w\":48,\"h\":17,\"i\":\"5\"},\"id\":\"cc5bb4b0-4826-11e9-a85d-d748de0cd831\",\"panelIndex\":\"5\",\"type\":\"search\",\"version\":\"6.6.1\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":15,\"w\":48,\"h\":20,\"i\":\"6\"},\"id\":\"689ef060-4342-11e9-a4c5-1717ba697d0d\",\"panelIndex\":\"6\",\"type\":\"search\",\"version\":\"6.6.1\"},{\"gridData\":{\"x\":0,\"y\":0,\"w\":48,\"h\":15,\"i\":\"7\"},\"version\":\"6.6.1\",\"panelIndex\":\"7\",\"type\":\"visualization\",\"id\":\"4d391470-48f3-11e9-b62f-8f6921045c4c\",\"embeddableConfig\":{}},{\"gridData\":{\"x\":0,\"y\":127,\"w\":48,\"h\":32,\"i\":\"8\"},\"version\":\"6.6.1\",\"panelIndex\":\"8\",\"type\":\"search\",\"id\":\"bcafaac0-48f4-11e9-b62f-8f6921045c4c\",\"embeddableConfig\":{\"sort\":[\"@timestamp\",\"desc\"]}}]",
@@ -505,6 +472,104 @@
       "timeRestore": false,
       "kibanaSavedObjectMeta": {
         "searchSourceJSON": "{\"query\":{\"query\":\"\\\"Enter the hostname here\\\"\",\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "f9b77dc0-4c1f-11e9-b05e-6fc957c1b917",
+    "_type": "search",
+    "_source": {
+      "title": "Sysmon-Process Creation SYSTEM- EventId1",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "beat_name",
+        "user_account",
+        "process_parent_guid",
+        "process_guid",
+        "process_parent_command_line",
+        "process_command_line",
+        "file_description",
+        "file_product",
+        "file_company"
+      ],
+      "sort": [
+        "@timestamp",
+        "asc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logs-endpoint-winevent-sysmon-*\",\"highlightAll\":true,\"version\":true,\"query\":{\"query\":\"event_id:1\",\"language\":\"lucene\"},\"filter\":[{\"meta\":{\"negate\":false,\"index\":\"logs-endpoint-winevent-sysmon-*\",\"type\":\"phrase\",\"key\":\"user_account\",\"value\":\"nt authority\\\\system\",\"params\":{\"query\":\"nt authority\\\\system\",\"type\":\"phrase\"},\"disabled\":false,\"alias\":null},\"query\":{\"match\":{\"user_account\":{\"query\":\"nt authority\\\\system\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "11e30dd0-4c23-11e9-b05e-6fc957c1b917",
+    "_type": "search",
+    "_source": {
+      "title": "Sysmon-Network Connections SYSTEM - EventId 3",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "beat_name",
+        "event_id",
+        "process_guid",
+        "process_path",
+        "user_account",
+        "src_ip_addr",
+        "src_port",
+        "dst_ip_addr",
+        "dst_port",
+        "meta_dst_ip_geo.city_name",
+        "ipv6_src_addr",
+        "ipv6_dst_addr"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logs-endpoint-*\",\"highlightAll\":true,\"version\":true,\"query\":{\"query\":\"event_id:3 AND NOT dst_ip_addr:[10.0.0.0 TO 10.255.255.255]\",\"language\":\"lucene\"},\"filter\":[{\"meta\":{\"negate\":false,\"index\":\"logs-endpoint-*\",\"type\":\"phrase\",\"key\":\"user_account\",\"value\":\"nt authority\\\\system\",\"params\":{\"query\":\"nt authority\\\\system\",\"type\":\"phrase\"},\"disabled\":false,\"alias\":null},\"query\":{\"match\":{\"user_account\":{\"query\":\"nt authority\\\\system\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "5a792770-4343-11e9-a4c5-1717ba697d0d",
+    "_type": "search",
+    "_source": {
+      "title": "Sysmon-Network Connections - EventId 3",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "beat_name",
+        "user_account",
+        "process_guid",
+        "process_path",
+        "src_ip_addr",
+        "src_port",
+        "dst_ip_addr",
+        "dst_port",
+        "meta_dst_ip_geo.city_name",
+        "ipv6_src_addr",
+        "ipv6_dst_addr"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logs-endpoint-*\",\"highlightAll\":true,\"version\":true,\"query\":{\"query\":\"event_id:3 AND (NOT dst_ip_addr: \\\"127.0.0.1\\\" AND NOT scr_ip_addr:\\\"239.255.255.250\\\" AND NOT dst_ip_addr:[10.0.0.0 TO 10.255.255.255] AND NOT dst_ip_addr:[192.168.0.0 TO 192.168.255.255])\",\"language\":\"lucene\"},\"filter\":[]}"
       }
     },
     "_meta": {
