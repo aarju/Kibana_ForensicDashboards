@@ -32,3 +32,13 @@ Enter a username in the search bar to investigate activity on that host.
 
 ## Sysmon-ProcessInvestigation
 Dashboard for investigating individual processes using the ProcessGuid in Sysmon events. Every executing process has a unique process_guid that can be used to show every sysmon event related to that process. Process Creation events also contain the parent_process_guid which can be used to track the lineage of a processes.
+* Timeline of the process events
+* Process Creation events - shows the child processes created
+* network connection events
+* downloads
+* Registry events
+* File creation
+* Named Pipes
+* all events
+* TODO Remote Thread Creation
+* All events from the process in a single panel.
