@@ -34,4 +34,3 @@ Enter a username in the search bar to investigate activity on that host.
 Dashboard for investigating individual processes using the ProcessGuid in Sysmon events. Every executing process has a unique process_guid that can be used to show every sysmon event related to that process. 
 * Process Creation events (event_id 1) also contain the parent_process_guid which can be used to track the lineage of a processes.
 * Multiple Process Guids can be displayed at once by chaining them together with OR statements
-* 
