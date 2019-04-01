@@ -1,6 +1,9 @@
 # Kibana_ForensicDashboards
 The purpose of this project is to provide a collection of dashboards that are useful for quickly conducting a forensic investigation on a host, user, or processes using centralized collection of Sysmon logs. These dashboards were created using Sysmon data injested through Kafka, you may need to adjust the field names if you are using a different forwarder.
 
+# Presented at BSides Munich 2019
+[![BSides Munich 2019](https://img.youtube.com/vi/tKO0YA3AU2w/0.jpg)](https://youtu.be/tKO0YA3AU2w "BSides Munich 2019")
+
 ## Usage
 Log into your Kibana instance navigate to Management -> Kibana -> Saved Objects
 Import the JSON file
