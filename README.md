@@ -1,6 +1,9 @@
 # Kibana_ForensicDashboards
 The purpose of this project is to provide a collection of dashboards that are useful for quickly conducting a forensic investigation on a host, user, or processes using centralized collection of Sysmon logs. These dashboards were created using Sysmon data injested through Kafka, you may need to adjust the field names if you are using a different forwarder.
 
+# Presented at BSides Munich 2019
+[![BSides Munich 2019](https://img.youtube.com/vi/tKO0YA3AU2w/0.jpg)](https://youtu.be/tKO0YA3AU2w "BSides Munich 2019")
+
 ## Usage
 Log into your Kibana instance navigate to Management -> Kibana -> Saved Objects
 Import the JSON file
@@ -31,14 +34,6 @@ Enter a username in the search bar to investigate activity on that host.
 * Local authentication events by the user
 
 ## Sysmon-ProcessInvestigation
-Dashboard for investigating individual processes using the ProcessGuid in Sysmon events. Every executing process has a unique process_guid that can be used to show every sysmon event related to that process. Process Creation events also contain the parent_process_guid which can be used to track the lineage of a processes.
-* Timeline of the process events
-* Process Creation events - shows the child processes created
-* network connection events
-* downloads
-* Registry events
-* File creation
-* Named Pipes
-* all events
-* TODO Remote Thread Creation
-* All events from the process in a single panel.
+Dashboard for investigating individual processes using the ProcessGuid in Sysmon events. Every executing process has a unique process_guid that can be used to show every sysmon event related to that process. 
+* Process Creation events (event_id 1) also contain the parent_process_guid which can be used to track the lineage of a processes.
+* Multiple Process Guids can be displayed at once by chaining them together with OR statements
